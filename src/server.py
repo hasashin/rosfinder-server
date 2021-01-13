@@ -49,7 +49,7 @@ print('ROS Detector Server is starting...')
 rosbridge_port = 9090
 
 if len(sys.argv) > 1:
-    rosbridge_port = sys.argv[1]
+    rosbridge_port = int(sys.argv[1])
 
 interface_addresses = []
 
@@ -60,7 +60,7 @@ listen_socket=socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
 listen_socket.bind(('',21337))
 
 print('ROS Detector Server started')
-print('Local IP address: ', listen_socket.getsockname())
+print('Server is listening on: ', listen_socket.getsockname())
 
 while True:
     try:
@@ -72,7 +72,7 @@ while True:
                 clinent_address = dottedQuadToNum(ip)
                 network = networkMask(net_addres(address[2][0]['addr'], address[2][0]['netmask']),dotted_mask_to_num(address[2][0]['netmask']))
                 if addressInNetwork(clinent_address,network):
-                    listen_socket.sendto('ACK'.encode('ASCII')+addr_to_bytes(address[2][0]['addr'])+rosbridge_port.to_bytes(2,'big'),m[1])
+                    listen_socket.sendto('ACK'.encode('ASCII')+rosbridge_port.to_bytes(2,'big'),m[1])
     except KeyboardInterrupt:
         break
 
