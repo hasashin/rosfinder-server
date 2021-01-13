@@ -3,6 +3,7 @@
 import rospy
 import socket,struct
 import netifaces as ni
+import sys
 
 
 def makeMask(n):
@@ -46,6 +47,9 @@ def addr_to_bytes(addr):
 print('ROS Detector Server is starting...')
 
 rosbridge_port = 9090
+
+if len(sys.argv) > 1:
+    rosbridge_port = sys.argv[1]
 
 interface_addresses = []
 
