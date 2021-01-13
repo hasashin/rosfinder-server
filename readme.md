@@ -1,4 +1,4 @@
-Detector server for ROS
+RosFinder server for ROS
 ===
 
 This node listens for specific datagram on any link on port 21337. 
@@ -11,7 +11,7 @@ Instalation
 To install this node do the following:
 1. Go to catkin workspace and clone repository into __src__ folder
 ```
-git clone https://github.com/hasashin/ros-detector-server
+git clone https://github.com/hasashin/rosfinder-server
 ```
 
 2. Then install required packages:
@@ -30,5 +30,5 @@ catkin_make
 
 5. Run server with:
 ```
-roslaunch ros-detector-server server.launch
+roslaunch rosfinder-server server.launch
 ```

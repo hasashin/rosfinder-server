@@ -44,7 +44,7 @@ def addr_to_bytes(addr):
         byts = byts + int(addr_section).to_bytes(1,'big')
     return byts
 
-print('ROS Detector Server is starting...')
+print('ROS Finder Server is starting...')
 
 rosbridge_port = 9090
 
@@ -59,7 +59,7 @@ for interface in ni.interfaces():
 listen_socket=socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
 listen_socket.bind(('',21337))
 
-print('ROS Detector Server started')
+print('ROS Finder Server started')
 print('Server is listening on: ', listen_socket.getsockname())
 
 while True:
