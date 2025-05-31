@@ -1,10 +1,10 @@
 RosFinder server for ROS
 ===
 
-# Reason
+## Reason
 While creating custom VR application for engineer's thesis. I needed solution to find which machine in the network is running ROS. ROS didn't provide discovery services so this custom one was created.
 
-# How it works
+## How it works
 
 This node listens for specific datagram on any link on port 21337. 
 
